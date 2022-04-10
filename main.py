@@ -139,7 +139,12 @@ def print_gameboard(word):
 
     guess = "USED LETTERS: "
     for letter in word.failed_guesses:
-        guess += "\033[1;31;1m" + letter + "\033[0m "
+        # Change color format so that text is red
+        guess += "\033[1;31;1m"
+        # Add letter to string with red formatting
+        guess += letter 
+        # Reset colors to default
+        guess += "\033[0m "
     board += ("|%s|\n") % guess.center(SPACING, ' ')
     board += ("+%s+\n") % ('-' * SPACING)
 
