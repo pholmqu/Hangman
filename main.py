@@ -139,7 +139,7 @@ def print_gameboard(word):
 
     guess = "USED LETTERS: "
     for letter in word.failed_guesses:
-        guess += letter + " "
+        guess += "\033[1;31;1m" + letter + "\033[0m "
     board += ("|%s|\n") % guess.center(SPACING, ' ')
     board += ("+%s+\n") % ('-' * SPACING)
 
